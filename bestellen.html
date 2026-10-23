@@ -1,92 +1,151 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bestellen — Sozing Zwolle</title>
-<meta name="description" content="Bestel online bij Chinees-Indisch Restaurant Sozing in Zwolle. Afhalen of laten bezorgen.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestellen — Sozing Zwolle</title>
+  <meta name="description" content="Bestel online bij Chinees-Indisch Restaurant Sozing in Zwolle. Afhalen of laten bezorgen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="site-header">
-<div class="language-switch" aria-label="Choose language">
-  <button type="button" id="langNL" class="lang-btn active" aria-pressed="true">🇳🇱 Nederlands</button>
-  <button type="button" id="langEN" class="lang-btn" aria-pressed="false">🇬🇧 English</button>
-</div>
+  <div class="language-switch" aria-label="Choose language">
+    <button type="button" id="langNL" class="lang-btn active" aria-pressed="true">🇳🇱 Nederlands</button>
+    <button type="button" id="langEN" class="lang-btn" aria-pressed="false">🇬🇧 English</button>
+  </div>
 
   <nav class="navbar">
     <a href="index.html" class="logo">SOZING<span>.</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">&#9776;</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">☰</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menukaart</a></li>
-      <li><a href="bestellen.html" class="active">Bestellen</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="bestellen.html" class="nav-cta">Bestel nu</a></li>
+      <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+      <li><a href="menu.html" data-nl="Menukaart" data-en="Menu">Menukaart</a></li>
+      <li><a href="bestellen.html" class="active" data-nl="Bestellen" data-en="Order">Bestellen</a></li>
+      <li><a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a></li>
+      <li><a href="bestellen.html" class="nav-cta" data-nl="Bestel nu" data-en="Order now">Bestel nu</a></li>
     </ul>
-    <a href="#jouw-bestelling" class="cart-btn" id="cartBtn">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.4c.8 0 1.5-.5 1.8-1.2L22 6H5.2L4.6 3.6A1 1 0 0 0 3.6 3H1v2h2l3 10.2A2 2 0 0 0 7.2 14z"/></svg>
+    <a href="#jouw-bestelling" class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.4c.8 0 1.5-.5 1.8-1.2L22 6H5.2L4.6 3.6A1 1 0 0 0 3.6 3H1v2h2l3 10.2A2 2 0 0 0 7.2 14z"/>
+      </svg>
       <span class="cart-count" id="cartCount">0</span>
     </a>
   </nav>
 </header>
 
 <section class="page-hero">
-  <h1>Bestellen</h1>
-  <p>Kies afhalen of bezorgen, controleer je bestelling en rond af.</p>
+  <h1 data-nl="Bestellen" data-en="Order">Bestellen</h1>
+  <p data-nl="Kies afhalen of bezorgen, controleer je bestelling en rond af."
+     data-en="Choose pickup or delivery, review your order and check out.">
+    Kies afhalen of bezorgen, controleer je bestelling en rond af.
+  </p>
 </section>
 
 <div class="container order-page">
 
   <div class="order-steps">
-    <div class="step active" id="step1"><span>1</span> Bestelling</div>
-    <div class="step" id="step2"><span>2</span> Gegevens</div>
-    <div class="step" id="step3"><span>3</span> Bevestiging</div>
+    <div class="step active" id="step1"><span>1</span> <span data-nl="Bestelling" data-en="Your order">Bestelling</span></div>
+    <div class="step" id="step2"><span>2</span> <span data-nl="Gegevens" data-en="Your details">Gegevens</span></div>
+    <div class="step" id="step3"><span>3</span> <span data-nl="Bevestiging" data-en="Confirmation">Bevestiging</span></div>
   </div>
 
   <div class="order-grid">
 
     <div class="order-main">
+
       <div class="delivery-toggle">
-        <button class="toggle-btn active" id="pickupBtn" type="button">&#128722; Afhalen</button>
-        <button class="toggle-btn" id="deliveryBtn" type="button">&#128666; Bezorgen</button>
+        <button class="toggle-btn active" id="pickupBtn" type="button"
+          data-nl="🛍️ Afhalen" data-en="🛍️ Pickup">🛍️ Afhalen</button>
+        <button class="toggle-btn" id="deliveryBtn" type="button"
+          data-nl="🚚 Bezorgen" data-en="🚚 Delivery">🚚 Bezorgen</button>
       </div>
-      <p class="toggle-hint" id="toggleHint">Afhalen: Willemskade 9, Zwolle &mdash; meestal klaar binnen 20 minuten.</p>
+
+      <p class="toggle-hint" id="toggleHint"
+        data-nl="Afhalen: Willemskade 9, Zwolle — meestal klaar binnen 20 minuten."
+        data-en="Pickup: Willemskade 9, Zwolle — usually ready within 20 minutes.">
+        Afhalen: Willemskade 9, Zwolle — meestal klaar binnen 20 minuten.
+      </p>
 
       <div id="menuPicker">
-        <h2 class="order-subtitle">Snel toevoegen</h2>
+        <h2 class="order-subtitle" data-nl="Snel toevoegen" data-en="Quick add">Snel toevoegen</h2>
+
         <div class="menu-list compact">
-          <div class="menu-item"><div class="menu-item-info"><h3>Nasi Goreng Special</h3></div><span class="price">&euro; 12,50</span><button class="btn btn-small" data-name="Nasi Goreng Special" data-price="12.50">Toevoegen</button></div>
-          <div class="menu-item"><div class="menu-item-info"><h3>Bami Goreng</h3></div><span class="price">&euro; 9,50</span><button class="btn btn-small" data-name="Bami Goreng" data-price="9.50">Toevoegen</button></div>
-          <div class="menu-item"><div class="menu-item-info"><h3>Tjap Tjoy</h3></div><span class="price">&euro; 12,00</span><button class="btn btn-small" data-name="Tjap Tjoy" data-price="12.00">Toevoegen</button></div>
-          <div class="menu-item"><div class="menu-item-info"><h3>Rendang</h3></div><span class="price">&euro; 14,50</span><button class="btn btn-small" data-name="Rendang" data-price="14.50">Toevoegen</button></div>
-          <div class="menu-item"><div class="menu-item-info"><h3>Sate Ajam (4 st.)</h3></div><span class="price">&euro; 9,00</span><button class="btn btn-small" data-name="Saté Ajam (4 st.)" data-price="9.00">Toevoegen</button></div>
+          <div class="menu-item">
+            <div class="menu-item-info"><h3>Nasi Goreng Special</h3></div>
+            <span class="price">€ 12,50</span>
+            <button class="btn btn-small" data-name="Nasi Goreng Special" data-price="12.50"
+              data-nl="Toevoegen" data-en="Add">Toevoegen</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info"><h3>Bami Goreng</h3></div>
+            <span class="price">€ 9,50</span>
+            <button class="btn btn-small" data-name="Bami Goreng" data-price="9.50"
+              data-nl="Toevoegen" data-en="Add">Toevoegen</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info"><h3>Tjap Tjoy</h3></div>
+            <span class="price">€ 12,00</span>
+            <button class="btn btn-small" data-name="Tjap Tjoy" data-price="12.00"
+              data-nl="Toevoegen" data-en="Add">Toevoegen</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info"><h3>Rendang</h3></div>
+            <span class="price">€ 14,50</span>
+            <button class="btn btn-small" data-name="Rendang" data-price="14.50"
+              data-nl="Toevoegen" data-en="Add">Toevoegen</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info"><h3>Saté Ajam (4 st.)</h3></div>
+            <span class="price">€ 9,00</span>
+            <button class="btn btn-small" data-name="Saté Ajam (4 st.)" data-price="9.00"
+              data-nl="Toevoegen" data-en="Add">Toevoegen</button>
+          </div>
         </div>
-        <p class="center"><a href="menu.html" class="btn btn-outline">&rarr; Naar de volledige menukaart</a></p>
+
+        <p class="center">
+          <a href="menu.html" class="btn btn-outline"
+            data-nl="→ Naar de volledige menukaart"
+            data-en="→ View the full menu">→ Naar de volledige menukaart</a>
+        </p>
       </div>
 
       <div id="customerForm" style="display:none;">
-        <h2 class="order-subtitle">Je gegevens</h2>
+        <h2 class="order-subtitle" data-nl="Je gegevens" data-en="Your details">Je gegevens</h2>
+
         <form id="orderForm" novalidate>
           <div class="form-row">
-            <label for="fName">Naam *</label>
-            <input type="text" id="fName" placeholder="Je voor- en achternaam" required>
+            <label for="fName" data-nl="Naam *" data-en="Name *">Naam *</label>
+            <input type="text" id="fName" placeholder="Je voor- en achternaam"
+              data-placeholder-nl="Je voor- en achternaam"
+              data-placeholder-en="Your first and last name" required>
           </div>
+
           <div class="form-row">
-            <label for="fPhone">Telefoonnummer *</label>
-            <input type="tel" id="fPhone" placeholder="Bijv. 06 12345678" required>
+            <label for="fPhone" data-nl="Telefoonnummer *" data-en="Phone number *">Telefoonnummer *</label>
+            <input type="tel" id="fPhone" placeholder="Bijv. 06 12345678"
+              data-placeholder-nl="Bijv. 06 12345678"
+              data-placeholder-en="e.g. 06 12345678" required>
           </div>
+
           <div class="form-row" id="addressRow" style="display:none;">
-            <label for="fAddress">Bezorgadres *</label>
-            <input type="text" id="fAddress" placeholder="Straat, huisnummer en postcode">
+            <label for="fAddress" data-nl="Bezorgadres *" data-en="Delivery address *">Bezorgadres *</label>
+            <input type="text" id="fAddress" placeholder="Straat, huisnummer en postcode"
+              data-placeholder-nl="Straat, huisnummer en postcode"
+              data-placeholder-en="Street, house number and postcode">
           </div>
+
           <div class="form-row">
-            <label for="fTime">Gewenste tijd</label>
+            <label for="fTime" data-nl="Gewenste tijd" data-en="Preferred time">Gewenste tijd</label>
             <select id="fTime">
-              <option value="Zo snel mogelijk">Zo snel mogelijk</option>
+              <option value="Zo snel mogelijk" data-nl="Zo snel mogelijk" data-en="As soon as possible">Zo snel mogelijk</option>
               <option value="17:30">17:30</option>
               <option value="18:00">18:00</option>
               <option value="18:30">18:30</option>
@@ -96,48 +155,73 @@
               <option value="20:30">20:30</option>
             </select>
           </div>
+
           <div class="form-row">
-            <label for="fNotes">Opmerking</label>
-            <textarea id="fNotes" rows="3" placeholder="Bijv. geen ui, extra pindasaus..."></textarea>
+            <label for="fNotes" data-nl="Opmerking" data-en="Notes">Opmerking</label>
+            <textarea id="fNotes" rows="3"
+              placeholder="Bijv. geen ui, extra pindasaus..."
+              data-placeholder-nl="Bijv. geen ui, extra pindasaus..."
+              data-placeholder-en="e.g. no onions, extra peanut sauce..."></textarea>
           </div>
+
           <p class="form-error" id="formError"></p>
+
           <div class="form-nav">
-            <button type="button" class="btn btn-outline" id="backToCart">&larr; Terug naar bestelling</button>
-            <button type="button" class="btn btn-primary" id="toConfirm">Controleer bestelling &rarr;</button>
+            <button type="button" class="btn btn-outline" id="backToCart"
+              data-nl="← Terug naar bestelling" data-en="← Back to order">← Terug naar bestelling</button>
+            <button type="button" class="btn btn-primary" id="toConfirm"
+              data-nl="Controleer bestelling →" data-en="Review order →">Controleer bestelling →</button>
           </div>
         </form>
       </div>
 
       <div id="confirmView" style="display:none;">
-        <h2 class="order-subtitle">Controleer je bestelling</h2>
+        <h2 class="order-subtitle" data-nl="Controleer je bestelling" data-en="Review your order">Controleer je bestelling</h2>
         <div id="confirmSummary" class="confirm-summary"></div>
         <div class="form-nav">
-          <button type="button" class="btn btn-outline" id="backToForm">&larr; Gegevens aanpassen</button>
-          <button type="button" class="btn btn-primary btn-big" id="placeOrderBtn">Bestelling plaatsen</button>
+          <button type="button" class="btn btn-outline" id="backToForm"
+            data-nl="← Gegevens aanpassen" data-en="← Edit details">← Gegevens aanpassen</button>
+          <button type="button" class="btn btn-primary btn-big" id="placeOrderBtn"
+            data-nl="Bestelling plaatsen" data-en="Place order">Bestelling plaatsen</button>
         </div>
       </div>
 
       <div id="successView" style="display:none;">
         <div class="success-box">
-          <div class="success-icon">&#10003;</div>
-          <h2>Bedankt, <span id="successName"></span>!</h2>
-          <p>Je bestelling <strong id="orderNumber"></strong> is ontvangen.</p>
+          <div class="success-icon">✓</div>
+          <h2><span data-nl="Bedankt," data-en="Thank you,">Bedankt,</span> <span id="successName"></span>!</h2>
+          <p><span data-nl="Je bestelling" data-en="Your order">Je bestelling</span>
+            <strong id="orderNumber"></strong>
+            <span data-nl="is ontvangen." data-en="has been received.">is ontvangen.</span>
+          </p>
           <p id="successEta" class="eta"></p>
-          <p class="success-note">Je krijgt zo een bevestiging per telefoon. Betaling bij afhalen of aan de deur.</p>
-          <button type="button" class="btn btn-outline" id="newOrderBtn">Nieuwe bestelling</button>
+          <p class="success-note"
+            data-nl="Je krijgt zo een bevestiging per telefoon. Betaling bij afhalen of aan de deur."
+            data-en="You will receive confirmation by phone. Pay at pickup or at the door.">
+            Je krijgt zo een bevestiging per telefoon. Betaling bij afhalen of aan de deur.
+          </p>
+          <button type="button" class="btn btn-outline" id="newOrderBtn"
+            data-nl="Nieuwe bestelling" data-en="New order">Nieuwe bestelling</button>
         </div>
       </div>
+
     </div>
 
     <aside class="order-sidebar" id="jouw-bestelling">
-      <h2>Je bestelling</h2>
+      <h2 data-nl="Je bestelling" data-en="Your order">Je bestelling</h2>
       <div id="cartItems" class="cart-items"></div>
-      <div class="cart-empty" id="cartEmpty">Je winkelmandje is nog leeg.<br><a href="menu.html">Bekijk de menukaart &rarr;</a></div>
+
+      <div class="cart-empty" id="cartEmpty">
+        <span data-nl="Je winkelmandje is nog leeg." data-en="Your cart is empty.">Je winkelmandje is nog leeg.</span><br>
+        <a href="menu.html" data-nl="Bekijk de menukaart →" data-en="View the menu →">Bekijk de menukaart →</a>
+      </div>
+
       <div class="cart-totals" id="cartTotals" style="display:none;">
-        <div class="tot-row"><span>Subtotaal</span><span id="subTotal">&euro; 0,00</span></div>
-        <div class="tot-row" id="deliveryRow"><span>Bezorgkosten</span><span id="deliveryFee">&euro; 0,00</span></div>
-        <div class="tot-row tot-grand"><span>Totaal</span><span id="grandTotal">&euro; 0,00</span></div>
-        <button type="button" class="btn btn-primary btn-full" id="checkoutBtn">Verder naar gegevens</button>
+        <div class="tot-row"><span data-nl="Subtotaal" data-en="Subtotal">Subtotaal</span><span id="subTotal">€ 0,00</span></div>
+        <div class="tot-row" id="deliveryRow"><span data-nl="Bezorgkosten" data-en="Delivery fee">Bezorgkosten</span><span id="deliveryFee">€ 0,00</span></div>
+        <div class="tot-row tot-grand"><span data-nl="Totaal" data-en="Total">Totaal</span><span id="grandTotal">€ 0,00</span></div>
+        <button type="button" class="btn btn-primary btn-full" id="checkoutBtn"
+          data-nl="Verder naar gegevens" data-en="Continue to details">Verder naar gegevens</button>
       </div>
     </aside>
 
@@ -150,21 +234,96 @@
       <h4>Sozing</h4>
       <p>Willemskade 9<br>8011 AC Zwolle<br>038 - 421 94 26<br>info@sozing.nl</p>
     </div>
+
     <div>
-      <h4>Openingstijden</h4>
-      <p>Ma &ndash; Do: 16:00 &ndash; 21:30<br>Vr &amp; Za: 15:00 &ndash; 22:00<br>Zo: 15:00 &ndash; 21:30</p>
+      <h4 data-nl="Openingstijden" data-en="Opening hours">Openingstijden</h4>
+      <p data-nl="Ma – Do: 16:00 – 21:30<br>Vr &amp; Za: 15:00 – 22:00<br>Zo: 15:00 – 21:30"
+         data-en="Mon – Thu: 16:00 – 21:30<br>Fri &amp; Sat: 15:00 – 22:00<br>Sun: 15:00 – 21:30">
+        Ma – Do: 16:00 – 21:30<br>
+        Vr &amp; Za: 15:00 – 22:00<br>
+        Zo: 15:00 – 21:30
+      </p>
     </div>
+
     <div>
-      <h4>Snel naar</h4>
-      <p><a href="menu.html">Menukaart</a><br><a href="bestellen.html">Bestellen</a><br><a href="contact.html">Contact</a></p>
+      <h4 data-nl="Snel naar" data-en="Quick links">Snel naar</h4>
+      <p>
+        <a href="menu.html" data-nl="Menukaart" data-en="Menu">Menukaart</a><br>
+        <a href="bestellen.html" data-nl="Bestellen" data-en="Order">Bestellen</a><br>
+        <a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a>
+      </p>
     </div>
   </div>
-  <div class="footer-disclaimer">
+
+  <div class="footer-disclaimer"
+    data-nl="Concept-website ter demonstratie. Prijzen, menu en openingstijden zijn voorbeelden."
+    data-en="Independent redesign concept for demonstration. Prices, menu and opening hours are examples.">
     Concept-website ter demonstratie. Prijzen, menu en openingstijden zijn voorbeelden.
   </div>
 </footer>
 
 <div class="toast" id="toast"></div>
+
 <script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const langNL = document.getElementById('langNL');
+  const langEN = document.getElementById('langEN');
+
+  if (!langNL || !langEN) return;
+
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+
+    langNL.classList.toggle('active', language === 'nl');
+    langEN.classList.toggle('active', language === 'en');
+
+    langNL.setAttribute('aria-pressed', String(language === 'nl'));
+    langEN.setAttribute('aria-pressed', String(language === 'en'));
+
+    try {
+      localStorage.setItem('sozingLanguage', language);
+    } catch (error) {
+      // Language switching still works if storage is unavailable.
+    }
+
+    document.querySelectorAll('[data-nl][data-en]').forEach(function (element) {
+      if (element.matches('option')) return;
+
+      element.textContent = language === 'en'
+        ? element.dataset.en
+        : element.dataset.nl;
+    });
+
+    document.querySelectorAll('[data-placeholder-nl][data-placeholder-en]').forEach(function (element) {
+      element.placeholder = language === 'en'
+        ? element.dataset.placeholderEn
+        : element.dataset.placeholderNl;
+    });
+
+    document.querySelectorAll('option[data-nl][data-en]').forEach(function (option) {
+      option.textContent = language === 'en' ? option.dataset.en : option.dataset.nl;
+    });
+  }
+
+  langNL.addEventListener('click', function () {
+    setLanguage('nl');
+  });
+
+  langEN.addEventListener('click', function () {
+    setLanguage('en');
+  });
+
+  let savedLanguage = 'nl';
+
+  try {
+    savedLanguage = localStorage.getItem('sozingLanguage') || 'nl';
+  } catch (error) {
+    // Default to Dutch.
+  }
+
+  setLanguage(savedLanguage);
+});
+</script>
 </body>
 </html>
