@@ -445,3 +445,25 @@ section { padding: 4.5rem 0; }
   .dish-footer { padding-top: 1rem; }
   .form-nav .btn { width: 100%; text-align: center; }
 }
+
+/* ---------- Mobile tap highlight and focus ---------- */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Keep quantity controls easy to tap */
+.qty-controls button {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
