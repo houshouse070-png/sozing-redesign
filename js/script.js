@@ -130,45 +130,68 @@ function renderCart() {
   const totalsEl = document.getElementById('cartTotals');
 
   if (cart.length === 0) {
-    itemsEl.innerHTML = '';
-
+    itemsEl.replaceChildren();
     if (emptyEl) emptyEl.style.display = 'block';
     if (totalsEl) totalsEl.style.display = 'none';
-
     return;
   }
 
   if (emptyEl) emptyEl.style.display = 'none';
   if (totalsEl) totalsEl.style.display = 'block';
 
-  itemsEl.innerHTML = cart.map(item => `
-    <div class="cart-row">
-      <div class="cart-row-info">
-        <h4>${item.name}</h4>
-        <span class="unit">${formatPrice(item.price)} p.s.</span>
-      </div>
+  itemsEl.replaceChildren();
 
-      <div class="qty-controls">
-        <button type="button"
-          onclick="changeQty(${JSON.stringify(item.name)}, -1)"
-          aria-label="Minder">&minus;</button>
+  cart.forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'cart-row';
 
-        <span class="qty">${item.qty}</span>
+    const info = document.createElement('div');
+    info.className = 'cart-row-info';
 
-        <button type="button"
-          onclick="changeQty(${JSON.stringify(item.name)}, 1)"
-          aria-label="Meer">+</button>
-      </div>
+    const name = document.createElement('h4');
+    name.textContent = item.name;
 
-      <span class="line-total">
-        ${formatPrice(item.price * item.qty)}
-      </span>
+    const unit = document.createElement('span');
+    unit.className = 'unit';
+    unit.textContent = formatPrice(item.price) + ' p.s.';
 
-      <button type="button" class="remove"
-        onclick="removeItem(${JSON.stringify(item.name)})"
-        aria-label="Verwijderen">&#10005;</button>
-    </div>
-  `).join('');
+    info.append(name, unit);
+
+    const controls = document.createElement('div');
+    controls.className = 'qty-controls';
+
+    const minus = document.createElement('button');
+    minus.type = 'button';
+    minus.textContent = '−';
+    minus.setAttribute('aria-label', 'Minder');
+    minus.addEventListener('click', () => changeQty(item.name, -1));
+
+    const qty = document.createElement('span');
+    qty.className = 'qty';
+    qty.textContent = item.qty;
+
+    const plus = document.createElement('button');
+    plus.type = 'button';
+    plus.textContent = '+';
+    plus.setAttribute('aria-label', 'Meer');
+    plus.addEventListener('click', () => changeQty(item.name, 1));
+
+    controls.append(minus, qty, plus);
+
+    const lineTotal = document.createElement('span');
+    lineTotal.className = 'line-total';
+    lineTotal.textContent = formatPrice(item.price * item.qty);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'remove';
+    remove.textContent = '×';
+    remove.setAttribute('aria-label', 'Verwijderen');
+    remove.addEventListener('click', () => removeItem(item.name));
+
+    row.append(info, controls, lineTotal, remove);
+    itemsEl.appendChild(row);
+  });
 
   const subtotalEl = document.getElementById('subTotal');
   const feeRow = document.getElementById('deliveryRow');
@@ -181,7 +204,6 @@ function renderCart() {
 
   if (currentMode() === 'delivery') {
     if (feeRow) feeRow.style.display = 'flex';
-
     if (feeEl) {
       feeEl.textContent = deliveryFee() === 0
         ? 'Gratis'
