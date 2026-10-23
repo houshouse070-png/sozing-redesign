@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Sozing Zwolle</title>
+<meta name="description" content="Contactgegevens en openingstijden van Chinees-Indisch Restaurant Sozing in Zwolle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">SOZING<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menukaart</a></li>
+      <li><a href="bestellen.html">Bestellen</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="bestellen.html" class="nav-cta">Bestel nu</a></li>
+    </ul>
+    <a href="bestellen.html" class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.4c.8 0 1.5-.5 1.8-1.2L22 6H5.2L4.6 3.6A1 1 0 0 0 3.6 3H1v2h2l3 10.2A2 2 0 0 0 7.2 14z"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Contact</h1>
+  <p>Vragen, buffet of catering? Neem gerust contact op.</p>
+</section>
+
+<div class="container contact-page">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Bezoek of bel ons</h2>
+      <div class="info-block">
+        <h3>&#128205; Adres</h3>
+        <p>Willemskade 9<br>8011 AC Zwolle</p>
+      </div>
+      <div class="info-block">
+        <h3>&#128222; Telefoon</h3>
+        <p><a href="tel:+31384219426">038 - 421 94 26</a></p>
+      </div>
+      <div class="info-block">
+        <h3>&#9993; E-mail</h3>
+        <p><a href="mailto:info@sozing.nl">info@sozing.nl</a></p>
+      </div>
+      <div class="info-block">
+        <h3>&#128337; Openingstijden</h3>
+        <table class="hours-table">
+          <tr><td>Maandag &ndash; Donderdag</td><td>16:00 &ndash; 21:30</td></tr>
+          <tr><td>Vrijdag &ndash; Zaterdag</td><td>15:00 &ndash; 22:00</td></tr>
+          <tr><td>Zondag</td><td>15:00 &ndash; 21:30</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h2>Stuur een bericht</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cName">Naam *</label>
+          <input type="text" id="cName" placeholder="Je naam" required>
+        </div>
+        <div class="form-row">
+          <label for="cEmail">E-mailadres *</label>
+          <input type="email" id="cEmail" placeholder="jij@voorbeeld.nl" required>
+        </div>
+        <div class="form-row">
+          <label for="cSubject">Onderwerp</label>
+          <select id="cSubject">
+            <option>Algemene vraag</option>
+            <option>Buffet bestellen</option>
+            <option>Catering</option>
+            <option>Klacht of compliment</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="cMessage">Bericht *</label>
+          <textarea id="cMessage" rows="5" placeholder="Schrijf je bericht..." required></textarea>
+        </div>
+        <p class="form-error" id="contactError"></p>
+        <button type="submit" class="btn btn-primary btn-full">Versturen</button>
+      </form>
+      <div class="success-box" id="contactSuccess" style="display:none;">
+        <div class="success-icon">&#10003;</div>
+        <h2>Bericht verzonden!</h2>
+        <p>We nemen zo snel mogelijk contact met je op.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-placeholder">
+    <p>&#128205; Kaart: Willemskade 9, 8011 AC Zwolle &mdash; nabij het centrum van Zwolle</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Sozing</h4>
+      <p>Willemskade 9<br>8011 AC Zwolle<br>038 - 421 94 26<br>info@sozing.nl</p>
+    </div>
+    <div>
+      <h4>Openingstijden</h4>
+      <p>Ma &ndash; Do: 16:00 &ndash; 21:30<br>Vr &amp; Za: 15:00 &ndash; 22:00<br>Zo: 15:00 &ndash; 21:30</p>
+    </div>
+    <div>
+      <h4>Snel naar</h4>
+      <p><a href="menu.html">Menukaart</a><br><a href="bestellen.html">Bestellen</a><br><a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Concept-website ter demonstratie. Prijzen, menu en openingstijden zijn voorbeelden.
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
