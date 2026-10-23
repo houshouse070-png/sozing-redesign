@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestellen — Sozing Zwolle</title>
+<meta name="description" content="Bestel online bij Chinees-Indisch Restaurant Sozing in Zwolle. Afhalen of laten bezorgen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">SOZING<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menukaart</a></li>
+      <li><a href="bestellen.html" class="active">Bestellen</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="bestellen.html" class="nav-cta">Bestel nu</a></li>
+    </ul>
+    <a href="#jouw-bestelling" class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.4c.8 0 1.5-.5 1.8-1.2L22 6H5.2L4.6 3.6A1 1 0 0 0 3.6 3H1v2h2l3 10.2A2 2 0 0 0 7.2 14z"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Bestellen</h1>
+  <p>Kies afhalen of bezorgen, controleer je bestelling en rond af.</p>
+</section>
+
+<div class="container order-page">
+
+  <div class="order-steps">
+    <div class="step active" id="step1"><span>1</span> Bestelling</div>
+    <div class="step" id="step2"><span>2</span> Gegevens</div>
+    <div class="step" id="step3"><span>3</span> Bevestiging</div>
+  </div>
+
+  <div class="order-grid">
+
+    <div class="order-main">
+      <div class="delivery-toggle">
+        <button class="toggle-btn active" id="pickupBtn" type="button">&#128722; Afhalen</button>
+        <button class="toggle-btn" id="deliveryBtn" type="button">&#128666; Bezorgen</button>
+      </div>
+      <p class="toggle-hint" id="toggleHint">Afhalen: Willemskade 9, Zwolle &mdash; meestal klaar binnen 20 minuten.</p>
+
+      <div id="menuPicker">
+        <h2 class="order-subtitle">Snel toevoegen</h2>
+        <div class="menu-list compact">
+          <div class="menu-item"><div class="menu-item-info"><h3>Nasi Goreng Special</h3></div><span class="price">&euro; 12,50</span><button class="btn btn-small" data-name="Nasi Goreng Special" data-price="12.50">Toevoegen</button></div>
+          <div class="menu-item"><div class="menu-item-info"><h3>Bami Goreng</h3></div><span class="price">&euro; 9,50</span><button class="btn btn-small" data-name="Bami Goreng" data-price="9.50">Toevoegen</button></div>
+          <div class="menu-item"><div class="menu-item-info"><h3>Tjap Tjoy</h3></div><span class="price">&euro; 12,00</span><button class="btn btn-small" data-name="Tjap Tjoy" data-price="12.00">Toevoegen</button></div>
+          <div class="menu-item"><div class="menu-item-info"><h3>Rendang</h3></div><span class="price">&euro; 14,50</span><button class="btn btn-small" data-name="Rendang" data-price="14.50">Toevoegen</button></div>
+          <div class="menu-item"><div class="menu-item-info"><h3>Sate Ajam (4 st.)</h3></div><span class="price">&euro; 9,00</span><button class="btn btn-small" data-name="Saté Ajam (4 st.)" data-price="9.00">Toevoegen</button></div>
+        </div>
+        <p class="center"><a href="menu.html" class="btn btn-outline">&rarr; Naar de volledige menukaart</a></p>
+      </div>
+
+      <div id="customerForm" style="display:none;">
+        <h2 class="order-subtitle">Je gegevens</h2>
+        <form id="orderForm" novalidate>
+          <div class="form-row">
+            <label for="fName">Naam *</label>
+            <input type="text" id="fName" placeholder="Je voor- en achternaam" required>
+          </div>
+          <div class="form-row">
+            <label for="fPhone">Telefoonnummer *</label>
+            <input type="tel" id="fPhone" placeholder="Bijv. 06 12345678" required>
+          </div>
+          <div class="form-row" id="addressRow" style="display:none;">
+            <label for="fAddress">Bezorgadres *</label>
+            <input type="text" id="fAddress" placeholder="Straat, huisnummer en postcode">
+          </div>
+          <div class="form-row">
+            <label for="fTime">Gewenste tijd</label>
+            <select id="fTime">
+              <option value="Zo snel mogelijk">Zo snel mogelijk</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fNotes">Opmerking</label>
+            <textarea id="fNotes" rows="3" placeholder="Bijv. geen ui, extra pindasaus..."></textarea>
+          </div>
+          <p class="form-error" id="formError"></p>
+          <div class="form-nav">
+            <button type="button" class="btn btn-outline" id="backToCart">&larr; Terug naar bestelling</button>
+            <button type="button" class="btn btn-primary" id="toConfirm">Controleer bestelling &rarr;</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="confirmView" style="display:none;">
+        <h2 class="order-subtitle">Controleer je bestelling</h2>
+        <div id="confirmSummary" class="confirm-summary"></div>
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" id="backToForm">&larr; Gegevens aanpassen</button>
+          <button type="button" class="btn btn-primary btn-big" id="placeOrderBtn">Bestelling plaatsen</button>
+        </div>
+      </div>
+
+      <div id="successView" style="display:none;">
+        <div class="success-box">
+          <div class="success-icon">&#10003;</div>
+          <h2>Bedankt, <span id="successName"></span>!</h2>
+          <p>Je bestelling <strong id="orderNumber"></strong> is ontvangen.</p>
+          <p id="successEta" class="eta"></p>
+          <p class="success-note">Je krijgt zo een bevestiging per telefoon. Betaling bij afhalen of aan de deur.</p>
+          <button type="button" class="btn btn-outline" id="newOrderBtn">Nieuwe bestelling</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="order-sidebar" id="jouw-bestelling">
+      <h2>Je bestelling</h2>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-empty" id="cartEmpty">Je winkelmandje is nog leeg.<br><a href="menu.html">Bekijk de menukaart &rarr;</a></div>
+      <div class="cart-totals" id="cartTotals" style="display:none;">
+        <div class="tot-row"><span>Subtotaal</span><span id="subTotal">&euro; 0,00</span></div>
+        <div class="tot-row" id="deliveryRow"><span>Bezorgkosten</span><span id="deliveryFee">&euro; 0,00</span></div>
+        <div class="tot-row tot-grand"><span>Totaal</span><span id="grandTotal">&euro; 0,00</span></div>
+        <button type="button" class="btn btn-primary btn-full" id="checkoutBtn">Verder naar gegevens</button>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Sozing</h4>
+      <p>Willemskade 9<br>8011 AC Zwolle<br>038 - 421 94 26<br>info@sozing.nl</p>
+    </div>
+    <div>
+      <h4>Openingstijden</h4>
+      <p>Ma &ndash; Do: 16:00 &ndash; 21:30<br>Vr &amp; Za: 15:00 &ndash; 22:00<br>Zo: 15:00 &ndash; 21:30</p>
+    </div>
+    <div>
+      <h4>Snel naar</h4>
+      <p><a href="menu.html">Menukaart</a><br><a href="bestellen.html">Bestellen</a><br><a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Concept-website ter demonstratie. Prijzen, menu en openingstijden zijn voorbeelden.
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
