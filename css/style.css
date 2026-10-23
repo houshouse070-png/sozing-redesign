@@ -467,3 +467,48 @@ textarea:focus-visible {
   user-select: none;
   -webkit-user-select: none;
 }
+
+/* ---------- Language switch ---------- */
+.language-switch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.lang-btn {
+  border: 1px solid var(--red);
+  border-radius: 999px;
+  padding: 7px 13px;
+  background: transparent;
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lang-btn.active {
+  background: var(--red);
+  color: #fff;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .language-switch {
+    padding: 8px 0;
+  }
+
+  .lang-btn {
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+}
