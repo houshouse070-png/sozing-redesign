@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menukaart — Sozing Zwolle</title>
+<meta name="description" content="Bekijk de menukaart van Chinees-Indisch Restaurant Sozing: voorgerechten, nasi, bami, rijsttafels en meer. Online bestellen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">SOZING<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menukaart</a></li>
+      <li><a href="bestellen.html">Bestellen</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="bestellen.html" class="nav-cta">Bestel nu</a></li>
+    </ul>
+    <a href="bestellen.html" class="cart-btn" id="cartBtn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7.2 14h10.4c.8 0 1.5-.5 1.8-1.2L22 6H5.2L4.6 3.6A1 1 0 0 0 3.6 3H1v2h2l3 10.2A2 2 0 0 0 7.2 14z"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Menukaart</h1>
+  <p>Alle gerechten vers bereid. Klik op &ldquo;Toevoegen&rdquo; en je bestelling staat klaar bij &ldquo;Bestellen&rdquo;.</p>
+</section>
+
+<div class="container menu-page">
+  <aside class="menu-nav" id="menuNav">
+    <a href="#voorgerechten">Voorgerechten</a>
+    <a href="#nasi-bami">Nasi &amp; Bami</a>
+    <a href="#chinees">Chinese gerechten</a>
+    <a href="#indisch">Indische gerechten</a>
+    <a href="#rijsttafel">Rijsttafels &amp; menu&rsquo;s</a>
+    <a href="#overig">Desserts &amp; dranken</a>
+  </aside>
+
+  <div class="menu-content">
+
+    <section class="menu-section" id="voorgerechten">
+      <h2>Voorgerechten</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Loempia&rsquo;s (2 st.)</h3><p>Knapperige groenteloempia&rsquo;s met zoetzure saus.</p></div><span class="price">&euro; 4,50</span><button class="btn btn-small" data-name="Loempia's (2 st.)" data-price="4.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Kroepoek</h3><p>Garnalenkroepoek, vers gebakken.</p></div><span class="price">&euro; 3,00</span><button class="btn btn-small" data-name="Kroepoek" data-price="3.00">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Pikante kip</h3><p>Malse kipreepjes in pittige oosterse saus.</p></div><span class="price">&euro; 6,50</span><button class="btn btn-small" data-name="Pikante kip" data-price="6.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Gado Gado</h3><p>Groenten met sat&eacute;saus, ei en kroepoek.</p></div><span class="price">&euro; 8,50</span><button class="btn btn-small" data-name="Gado Gado" data-price="8.50">Toevoegen</button></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="nasi-bami">
+      <h2>Nasi &amp; Bami</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Nasi Goreng</h3><p>Gebakken rijst met groenten, ei en varkensvlees.</p></div><span class="price">&euro; 9,50</span><button class="btn btn-small" data-name="Nasi Goreng" data-price="9.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Bami Goreng</h3><p>Gebakken mie met groenten, ei en varkensvlees.</p></div><span class="price">&euro; 9,50</span><button class="btn btn-small" data-name="Bami Goreng" data-price="9.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Nasi Goreng Special</h3><p>Met kip, sat&eacute;, gebakken ei en kroepoek.</p></div><span class="price">&euro; 12,50</span><button class="btn btn-small" data-name="Nasi Goreng Special" data-price="12.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Bami Goreng Special</h3><p>Met kip, sat&eacute;, gebakken ei en kroepoek.</p></div><span class="price">&euro; 12,50</span><button class="btn btn-small" data-name="Bami Goreng Special" data-price="12.50">Toevoegen</button></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="chinees">
+      <h2>Chinese gerechten</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Tjap Tjoy met varkensvlees</h3><p>Gebakken groenten met lichte Chinese saus.</p></div><span class="price">&euro; 12,00</span><button class="btn btn-small" data-name="Tjap Tjoy" data-price="12.00">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Koe Loew Kai</h3><p>Kipfilet met pikante zoetzure saus.</p></div><span class="price">&euro; 13,00</span><button class="btn btn-small" data-name="Koe Loew Kai" data-price="13.00">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Foe Yong Hai</h3><p>Eierpannenkoek met garnalen en zoetzure saus.</p></div><span class="price">&euro; 11,50</span><button class="btn btn-small" data-name="Foe Yong Hai" data-price="11.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Chop Suey met kip</h3><p>Gebakken groenten met kip in heldere saus.</p></div><span class="price">&euro; 11,00</span><button class="btn btn-small" data-name="Chop Suey met kip" data-price="11.00">Toevoegen</button></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="indisch">
+      <h2>Indische gerechten</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Rendang</h3><p>Rundvlees gestoofd in kokosmelk en kruiden. Pikant.</p></div><span class="price">&euro; 14,50</span><button class="btn btn-small" data-name="Rendang" data-price="14.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Sate Ajam (4 st.)</h3><p>Kipsat&eacute; met huisgemaakte pindasaus.</p></div><span class="price">&euro; 9,00</span><button class="btn btn-small" data-name="Saté Ajam (4 st.)" data-price="9.00">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Sambal Goreng Telor</h3><p>Eieren in pittige saus.</p></div><span class="price">&euro; 7,50</span><button class="btn btn-small" data-name="Sambal Goreng Telor" data-price="7.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Ajam Pangang</h3><p>Geroosterde kip met ketjapsaus.</p></div><span class="price">&euro; 12,50</span><button class="btn btn-small" data-name="Ajam Pangang" data-price="12.50">Toevoegen</button></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="rijsttafel">
+      <h2>Rijsttafels &amp; menu&rsquo;s</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Rijsttafel Sozing (2 pers.)</h3><p>Sat&eacute;, ajam pangang, tjap tjoy, gebakken rijst, kroepoek.</p></div><span class="price">&euro; 39,50</span><button class="btn btn-small" data-name="Rijsttafel Sozing (2 pers.)" data-price="39.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Kindermenu</h3><p>Nasi of bami met kipnuggets, frites en frisdrank.</p></div><span class="price">&euro; 8,50</span><button class="btn btn-small" data-name="Kindermenu" data-price="8.50">Toevoegen</button></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="overig">
+      <h2>Desserts &amp; dranken</h2>
+      <div class="menu-list">
+        <div class="menu-item"><div class="menu-item-info"><h3>Banaan in de frituur</h3><p>Met honing en kaneelsuiker.</p></div><span class="price">&euro; 5,00</span><button class="btn btn-small" data-name="Banaan in de frituur" data-price="5.00">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Pisang Goreng</h3><p>Gebakken banaan in krokant jasje.</p></div><span class="price">&euro; 5,50</span><button class="btn btn-small" data-name="Pisang Goreng" data-price="5.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Frisdrank (33 cl)</h3><p>Coca-Cola, Fanta, Cassis, Sprite.</p></div><span class="price">&euro; 2,50</span><button class="btn btn-small" data-name="Frisdrank 33cl" data-price="2.50">Toevoegen</button></div>
+        <div class="menu-item"><div class="menu-item-info"><h3>Bier (33 cl)</h3><p>Hertog Jan of Jupiler.</p></div><span class="price">&euro; 3,00</span><button class="btn btn-small" data-name="Bier 33cl" data-price="3.00">Toevoegen</button></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Sozing</h4>
+      <p>Willemskade 9<br>8011 AC Zwolle<br>038 - 421 94 26<br>info@sozing.nl</p>
+    </div>
+    <div>
+      <h4>Openingstijden</h4>
+      <p>Ma &ndash; Do: 16:00 &ndash; 21:30<br>Vr &amp; Za: 15:00 &ndash; 22:00<br>Zo: 15:00 &ndash; 21:30</p>
+    </div>
+    <div>
+      <h4>Snel naar</h4>
+      <p><a href="menu.html">Menukaart</a><br><a href="bestellen.html">Bestellen</a><br><a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Concept-website ter demonstratie. Prijzen, menu en openingstijden zijn voorbeelden.
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
