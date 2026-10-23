@@ -550,3 +550,35 @@ document.addEventListener('DOMContentLoaded', function () {
     setMode('pickup');
   }
 });
+
+/* ---------- Language switch buttons ---------- */
+document.addEventListener('DOMContentLoaded', function () {
+  const langNL = document.getElementById('langNL');
+  const langEN = document.getElementById('langEN');
+
+  if (!langNL || !langEN) return;
+
+  function setLanguage(language) {
+    document.documentElement.lang = language;
+
+    langNL.classList.toggle('active', language === 'nl');
+    langEN.classList.toggle('active', language === 'en');
+
+    langNL.setAttribute('aria-pressed', String(language === 'nl'));
+    langEN.setAttribute('aria-pressed', String(language === 'en'));
+
+    localStorage.setItem('sozingLanguage', language);
+
+    document.querySelectorAll('[data-nl][data-en]').forEach(element => {
+      element.textContent =
+        language === 'en'
+          ? element.dataset.en
+          : element.dataset.nl;
+    });
+  }
+
+  langNL.addEventListener('click', () => setLanguage('nl'));
+  langEN.addEventListener('click', () => setLanguage('en'));
+
+  setLanguage(localStorage.getItem('sozingLanguage') || 'nl');
+});
